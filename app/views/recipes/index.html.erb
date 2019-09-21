@@ -2,20 +2,10 @@
 <p>Mmm cook me, eat me, get fat, and be happy!</p>
 
 <% @recipes.each do |recipe| %>
-  <h2><%= recipe.title %></h2>
+  <h2><%= link_to(recipe.title, recipe) %></h2>
 
-  <h3>Ingredients</h3>
-  <ul>
-    <% Array(recipe.ingredients.split(', ')).each do |ingredient| %>
-      <li><%= ingredient %></li>
-    <% end %>
-  </ul>
+  <p>Ingredients: <%= Array(recipe.ingredients.split(', ')).length %></p>
 
-  <h3>Directions</h3>
-  <ol>
-    <% Array(recipe.steps.split(', ')).each do |step| %>
-      <li><%= step %></li>
-    <% end %>
-  </ol>
+  <p>Directions: <%= Array(recipe.steps.split(', ')).length %></p>
   <br />
 <% end %>

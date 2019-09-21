@@ -1,0 +1,15 @@
+<h1><%= @recipe.title %></h1>
+<h2>Ingredients</h2>
+<ul>
+  <% Array(@recipe.ingredients.split(', ')).each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
+
+<h2>Directions</h2>
+<ol>
+  <% Array(@recipe.steps.split(', ')).each do |step| %>
+    <li><%= step %></li>
+  <% end %>
+</ol>
+<br />

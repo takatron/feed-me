@@ -1,0 +1,9 @@
+<h1>Recipes</h1>
+<p>Mmm cook me, eat me, get fat, and be happy!</p>
+
+<% @recipes.each do |recipe| %>
+  <h2><%= recipe.title %></h2>
+  <p><%= recipe.ingredients %></p>
+  <p><%= recipe.steps %></p>
+  <br />
+<% end %>

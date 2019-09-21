@@ -4,6 +4,7 @@
 `2.5.1`
 
 Practicing Rails by making a personal use application that allows me to add recipes (ingredients, steps, and notes).
+
 MVP:
 - can create/update/delete recipes
 - can create/update categories (not sure about how to handle overall deletion yet)

@@ -1,4 +1,4 @@
-# show list of recipes
+# root/recipes
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all

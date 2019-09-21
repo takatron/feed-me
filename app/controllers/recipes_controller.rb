@@ -22,4 +22,16 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    recipe = Recipe.find(params[:id])
+    attr = params.require(:recipe).permit(:title, :ingredients, :steps)
+    recipe.update(attr)
+
+    redirect_to recipe_path(recipe)
+  end
 end

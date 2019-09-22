@@ -1,5 +1,6 @@
 <%= link_to('View All Recipes', recipes_path) %>
-<h1><%= @recipe.title %></h1> <%= link_to('Edit', edit_recipe_path(@recipe.id)) %>
+<h1><%= @recipe.title %></h1> <%= button_to('Edit', edit_recipe_path(@recipe.id), :method => :get) %>
+
 
 <h2>Ingredients</h2>
 <ul>
@@ -14,4 +15,5 @@
     <li><%= step %></li>
   <% end %>
 </ol>
+<br />
 <br />

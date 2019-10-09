@@ -14,5 +14,10 @@
   <%= f.text_field :steps %>
   <br />
   <br />
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |cat|%>
+    <%= cat.label(class: 'checkbox inline') {cat.check_box() + cat.text } %><br />
+  <% end %>
+  <br />
+  <br />
   <%= link_to("cancel", path) %> <%= f.submit "Submit" %>
 <% end %>

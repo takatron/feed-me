@@ -1,7 +1,7 @@
 # root/recipes
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.includes(:categories)
   end
 
   def new

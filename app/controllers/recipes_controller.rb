@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    attr = params.require(:recipe).permit(:title, :ingredients, :steps)
+    attr = params.require(:recipe).permit(:title, :ingredients, :steps, category_ids:[])
     @recipe = Recipe.new(attr)
 
     if @recipe.save
@@ -29,7 +29,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe = Recipe.find(params[:id])
-    attr = params.require(:recipe).permit(:title, :ingredients, :steps)
+    attr = params.require(:recipe).permit(:title, :ingredients, :steps, category_ids:[])
     recipe.update(attr)
 
     redirect_to recipe_path(recipe)

@@ -5,6 +5,7 @@
 
 <% @recipes.each do |recipe| %>
   <h2><%= link_to(recipe.title, recipe) %></h2>
+  (<% recipe.categories.each do |cat| %><span><%= cat.name %>, </span><% end %>)
 
   <p>Ingredients: <%= Array(recipe.ingredients.split(', ')).length %></p>
 

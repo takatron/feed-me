@@ -20,7 +20,9 @@
   <%= link_to('+ New Category', new_category_path) %>
   <br />
   <br />
-
+  <%= f.collection_radio_buttons(:level_id, Level.all, :id, :name) do |l|%>
+    <%= l.label(class: 'checkbox inline') {l.radio_button() + l.text } %><br />
+  <% end %>
   <br />
   <br />
   <%= link_to("cancel", path) %> <%= f.submit "Submit" %>

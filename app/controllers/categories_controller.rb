@@ -9,8 +9,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    attr = params.require(:category).permit(:name)
-    @category = Category.new(attr)
+    @category = Category.new(allowed_params)
 
     if @category.save
       redirect_to categories_path
@@ -29,9 +28,13 @@ class CategoriesController < ApplicationController
 
   def update
     category = Category.find(params[:id])
-    attr = params.require(:category).permit(:name)
-    category.update(attr)
+    category.update(allowed_params)
 
     redirect_to category_path(category)
+  end
+
+  private
+  def allowed_params
+    params.require(:category).permit(:name, :colour)
   end
 end

@@ -1,0 +1,45 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+
+    .button_to {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    margin-bottom: 4px;
+  }
+
+  &__count {
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 4px;
+  }
+
+  &__colour-indicator {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    margin-right: 10px;
+
+    &__small {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+  }
+
+  &__edit {
+    margin-left: 20px;
+  }
+
+}

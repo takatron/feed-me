@@ -1,2 +1,8 @@
-<%= link_to('View All Categories', categories_path) %>
-<h1><%= @category.name %></h1>  <%= button_to('Edit', edit_category_path(@category.id), :method => :get) %>
+<div class="categories">
+  <%= link_to('View All Categories', categories_path) %>
+  <h1 class="categories__title-container">
+    <span class="categories__colour-indicator" style="background:<%= @category.colour %>;"></span>
+    <%= @category.name %>
+    <%= button_to('Edit', edit_category_path(@category.id), :method => :get, class: 'categories__edit') %>
+  </h1>
+</div>

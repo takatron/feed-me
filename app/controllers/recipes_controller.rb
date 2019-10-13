@@ -1,6 +1,5 @@
 # root/recipes
 class RecipesController < ApplicationController
-  require 'pry'
   def index
     @recipes = Recipe.all.includes(:categories, :level)
   end
@@ -10,9 +9,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
-    attr = params.require(:recipe).permit(:title, :ingredients, :steps, :level_id, category_ids:[])
-    @recipe = Recipe.new(attr)
+    @recipe = Recipe.new(allowed_params)
 
     if @recipe.save
       redirect_to recipes_path
@@ -31,9 +28,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe = Recipe.find(params[:id])
-    binding.pry
-    attr = params.require(:recipe).permit(:title, :ingredients, :steps, :level_id, category_ids:[])
-    recipe.update(attr)
+    recipe.update(allowed_params)
 
     redirect_to recipe_path(recipe)
   end
@@ -43,5 +38,10 @@ class RecipesController < ApplicationController
     Recipe.destroy(id)
 
     redirect_to recipes_path
+  end
+
+  private
+  def allowed_params
+    params.require(:recipe).permit(:title, :ingredients, :steps, :level_id, category_ids:[])
   end
 end

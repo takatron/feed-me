@@ -4,5 +4,11 @@
   <%= f.text_field :name %>
   <br />
   <br />
+  <%= f.label "Badge Colour (html colour or hex):" %>
+  <br />
+  <%= f.text_field :colour %>
+  <span class="categories__colour-indicator__small" style="background:<%= category.colour %>;"></span>
+  <br />
+  <br />
   <%= link_to("cancel", path) %> <%= f.submit "Submit" %>
 <% end %>

@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <nav class="navigation">
+      <ul class="navigation__list">
+        <a href="/recipes" class="no-deco" title="All Recipes">
+          <li class="navigation__list__item">Recipes</li>
+        </a>
+        <a href="/categories" class="no-deco" title="All Categories">
+          <li class="navigation__list__item">Categories</li>
+        </a>
+        <a href="/levels" class="no-deco" title="Difficulty Levels">
+          <li class="navigation__list__item">Difficulty</li>
+        </a>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  margin: -10px;
+  margin-bottom: 0;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: hotpink;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+    &__item {
+      padding: 10px 20px 4px;
+      border-bottom: 6px solid transparent;
+      transition: all 200ms ease-out;
+
+      &:hover,
+      &:focus {
+        color: deeppink;
+        border-bottom: 6px solid deeppink;
+      }
+    }
+  }
+}

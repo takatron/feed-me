@@ -2,7 +2,7 @@
 class RecipesController < ApplicationController
   require 'pry'
   def index
-    @recipes = Recipe.all.includes(:categories)
+    @recipes = Recipe.all.includes(:categories, :level)
   end
 
   def new

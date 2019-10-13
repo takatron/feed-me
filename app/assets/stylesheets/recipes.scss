@@ -1,3 +1,17 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipes__level {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.recipes__categories--badge {
+  border-radius: 3px;
+  padding: 0 4px;
+
+  &:not(:last-of-type) {
+    margin-right: 4px;
+  }
+}

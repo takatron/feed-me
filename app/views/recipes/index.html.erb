@@ -4,8 +4,15 @@
 <%= link_to('+ New Recipe', new_recipe_path) %>
 
 <% @recipes.each do |recipe| %>
-  <h2><%= link_to(recipe.title, recipe) %></h2>
-  (<% recipe.categories.each do |cat| %><span><%= cat.name %>, </span><% end %>)
+  <h2>
+    <%= link_to(recipe.title, recipe, class: 'no-deco') %>
+    <span class="recipe__level">(<%= recipe.level.name %>)</span>
+  </h2>
+  <span class="recipes__categories">
+    <% recipe.categories.each do |cat| %>
+      <span class="recipes__categories--badge" style="background:red; "><%= cat.name %></span>
+    <% end %>
+  </span>
 
   <p>Ingredients: <%= Array(recipe.ingredients.split(', ')).length %></p>
 

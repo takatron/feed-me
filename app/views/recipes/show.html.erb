@@ -1,24 +1,30 @@
 <%= link_to('View All Recipes', recipes_path) %>
-<h1>
-  <%= @recipe.title %> <span>(<%= @recipe.level.name %>)</span>
-  <%= button_to('Edit', edit_recipe_path(@recipe.id), :method => :get) %>
-</h1>
+<div class="recipes">
+  <h1 class="recipes__title">
+    <%= @recipe.title %> <span class="recipes__level">(<%= @recipe.level.name %>)</span>
+    <%= button_to('Edit', edit_recipe_path(@recipe.id), :method => :get, class: 'recipes__edit') %>
+  </h1>
 
-Categories: <% @recipe.categories.each do |cat| %><span><%= cat.name %>, </span><% end %>
+  <span class="recipes__categories">
+    <% @recipe.categories.each do |cat| %>
+      <span class="recipes__categories--badge" style="background:<%= cat.colour %>; "><%= cat.name %></span>
+    <% end %>
+  </span>
 
-<h2>Ingredients</h2>
-<ul>
-  <% Array(@recipe.ingredients.split(', ')).each do |ingredient| %>
-    <li><%= ingredient %></li>
-  <% end %>
-</ul>
+  <h2>Ingredients</h2>
+  <ul>
+    <% Array(@recipe.ingredients.split(', ')).each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
 
-<h2>Directions</h2>
-<ol>
-  <% Array(@recipe.steps.split(', ')).each do |step| %>
-    <li><%= step %></li>
-  <% end %>
-</ol>
-<br />
-<br />
-<%= button_to('Delete', @recipe, :method => :delete, data:{ confirm: 'Are you sure?' }) %>
+  <h2>Directions</h2>
+  <ol>
+    <% Array(@recipe.steps.split(', ')).each do |step| %>
+      <li><%= step %></li>
+    <% end %>
+  </ol>
+  <br />
+  <br />
+  <%= button_to('Delete', @recipe, :method => :delete, data:{ confirm: 'Are you sure?' }) %>
+  </div>

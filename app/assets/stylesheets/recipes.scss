@@ -2,16 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.recipes__level {
-  font-size: 18px;
-  font-weight: normal;
-}
+.recipes {
+  .button_to {
+    display: flex;
+    align-items: center;
+  }
 
-.recipes__categories--badge {
-  border-radius: 3px;
-  padding: 0 4px;
+  &__edit {
+    margin-left: 20px;
+  }
 
-  &:not(:last-of-type) {
-    margin-right: 4px;
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__level {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+
+  &__categories {
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+
+    &--badge {
+      border-radius: 3px;
+      padding: 0 4px;
+
+      &:not(:last-of-type) {
+        margin-right: 4px;
+      }
+    }
   }
 }

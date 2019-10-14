@@ -1,14 +1,15 @@
-<%= form_for category do |f| %>
-  <%= f.label "Category Name:" %>
-  <br />
-  <%= f.text_field :name %>
-  <br />
-  <br />
-  <%= f.label "Badge Colour (html colour or hex):" %>
-  <br />
-  <%= f.text_field :colour %>
-  <span class="categories__colour-indicator__small" style="background:<%= category.colour %>;"></span>
-  <br />
-  <br />
-  <%= link_to("cancel", path) %> <%= f.submit "Submit" %>
+<%= form_for(:category, url: categories_path, html: {class: 'categories form'}) do |f| %>
+  <%= f.label(:name, class: 'label') {"Category Name:"} %>
+  <%= f.text_field(:name, class: 'input') %>
+
+  <%= f.label(:colour, class: 'label') {"Badge Colour (html colour or hex):"} %>
+  <div class="categories__colour">
+    <%= f.text_field(:colour, class: 'input', value: 'black') %>
+    <span class="categories__colour__indicator" style="background:<%= category.colour || 'black' %> ;"></span>
+  </div>
+
+  <div class="categories__buttons">
+    <%= link_to("cancel", path) %>
+    <%= f.submit "Submit", class: 'primary' %>
+  </div>
 <% end %>

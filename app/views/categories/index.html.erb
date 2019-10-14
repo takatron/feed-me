@@ -1,11 +1,16 @@
-<h1>Categories</h1>
-<%= link_to('+ New Category', new_category_path) %>
-<br />
-<br />
-<% @category.each do |category| %>
-  <h2 class="categories__title-container">
-    <span class="categories__colour-indicator" style="background:<%= category.colour %>;"></span>
-    <%= link_to(category.name, category_path(category.id), class: 'categories__link no-deco') %>
-    <span class="categories__count">(<%= category.recipes.count %>)</span>
-  </h2>
-<% end %>
+<div class="categories">
+  <h1 class="categories__title">Categories
+    <%= button_to('+ New Category',
+      new_category_path,
+      :method => :get,
+      class: 'primary recipes__add') %>
+  </h1>
+
+  <% @category.each do |category| %>
+    <div class="categories__title-container">
+      <span class="categories__colour__indicator" style="background:<%= category.colour %>;"></span>
+      <%= link_to(category.name, category_path(category.id), class: 'categories__link no-deco') %>
+      <span class="categories__count">(<%= category.recipes.count %>)</span>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 @import "_colours";
 
-.recipes {
+.recipes,
+.categories {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -90,6 +91,7 @@
 
   &__set-difficulty {
     margin-top: 20px;
+    margin-bottom: 14px;
 
     &__list {
       display: flex;
@@ -101,6 +103,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 30px;
+    margin-top: 10px;
+
+    .primary {
+      margin-left: 20px;
+    }
   }
 }

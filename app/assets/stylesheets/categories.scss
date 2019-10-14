@@ -1,35 +1,22 @@
+// inherits basic styling from ./recipes.scss
+
 .categories {
   display: flex;
   flex-direction: column;
 
   &__title-container {
+    margin: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__colour {
+    width: 100%;
     display: flex;
     align-items: center;
 
-    .button_to {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  &__link {
-    margin-bottom: 4px;
-  }
-
-  &__count {
-    font-weight: normal;
-    font-size: 16px;
-    margin-left: 4px;
-  }
-
-  &__colour-indicator {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 100%;
-    margin-right: 10px;
-
-    &__small {
+    &__indicator {
       display: inline-block;
       width: 10px;
       height: 10px;
@@ -38,8 +25,21 @@
     }
   }
 
-  &__edit {
-    margin-left: 20px;
+  &__count {
+    font-weight: normal;
+    margin-left: 4px;
   }
 
+  &.form {
+    .categories__colour {
+      .input {
+        flex: 1
+      }
+
+      &__indicator {
+        margin-bottom: 14px;
+        margin-left: 10px;
+      }
+    }
+  }
 }

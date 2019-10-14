@@ -1,6 +1,6 @@
 <div class="recipes">
   <h1 class="recipes__title">Recipes
-    <%= button_to('+ New Recipe', new_recipe_path, class: 'recipes__add') %>
+    <%= button_to('+ New Recipe', new_recipe_path, :method => :get, class: 'recipes__add') %>
   </h1>
   <p>Mmm cook me, eat me, get fat, and be happy!</p>
 

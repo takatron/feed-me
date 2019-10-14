@@ -6,50 +6,73 @@ body {
   margin: 10px;
 }
 
- h1 {
-   font-size: 30px;
- }
+h1 {
+ font-size: 30px;
+}
 
- h2 {
-   font-size: 26px;
- }
+h2 {
+ font-size: 26px;
+}
 
- h3 {
-   font-size: 24px;
- }
+h3 {
+ font-size: 24px;
+}
 
- h4 {
-   font-size: 20px;
- }
+h4 {
+ font-size: 20px;
+}
 
- h5 {
-   font-size: 18px;
- }
+h5 {
+ font-size: 18px;
+}
 
- h6 {
-   font-size: 16px;
- }
+h6 {
+ font-size: 16px;
+}
 
- a {
+a {
+ color: $primary;
+
+ &:visited,
+ &:active {
    color: $primary;
-
-   &:visited,
-   &:active {
-     color: $primary;
-   }
-
-   &:hover,
-   &:focus {
-     color: $primary_dark;
-   }
  }
 
- a.no-deco, a.no-deco:hover {
-   text-decoration: none;
+ &:hover,
+ &:focus {
+   color: $primary_dark;
  }
+}
+
+a.no-deco, a.no-deco:hover {
+ text-decoration: none;
+}
+
+.label {
+  margin-bottom: 4px;
+
+  &--inline {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.input {
+  height: 28px;
+  padding: 0 6px;
+  margin-bottom: 14px;
+}
+
+.checkbox,
+.radio {
+  height: 20px;
+  margin: 0;
+  margin-right: 10px;
+}
 
 button,
-input[type="submit"] {
+.submit {
   background: $primary;
   border: none;
   border-radius: 2px;

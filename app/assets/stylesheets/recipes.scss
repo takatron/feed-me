@@ -30,12 +30,13 @@
 
   &__categories {
     display: flex;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: normal;
+    color: white;
 
     &--badge {
       border-radius: 3px;
-      padding: 0 4px;
+      padding: 2px 8px;
 
       &:not(:last-of-type) {
         margin-right: 4px;
@@ -43,15 +44,15 @@
     }
   }
 
+  // new & edt forms
   &.form {
     width: 300px;
   }
 
-  &__new-categories,
-  &__new-difficulty {
+  &__set-categories,
+  &__set-difficulty {
     position: relative;
     border: 1px solid black;
-    margin-top: 24px;
     max-width: 300px;
 
     &__label {
@@ -59,28 +60,35 @@
       top: -12px;
       left: -11px;
       display: flex;
-      justify-content: space-between;
+      align-items: center;
       background: white;
       padding: 4px 10px;
     }
 
     &__list {
-      padding: 10px;
-      max-height: 100px;
-      overflow: hidden;
-      overflow-y: scroll;
+      margin: 10px;
     }
 
     &__add {
       background: white;
       padding: 4px 10px;
-      margin: 10px 0 4px;
+      margin: 4px 0;
     }
   }
 
-  &__new-difficulty {
-    display: flex;
-    flex-direction: column;
+  &__set-categories {
+    margin-top: 6px;
+
+    &__list {
+      max-height: 100px;
+      overflow: hidden;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__set-difficulty {
     margin-top: 20px;
 
     &__list {
@@ -93,6 +101,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }

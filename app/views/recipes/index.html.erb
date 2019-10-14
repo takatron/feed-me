@@ -11,13 +11,13 @@
     </h2>
     <span class="recipes__categories">
       <% recipe.categories.each do |cat| %>
-        <span class="recipes__categories--badge" style="background:<%= cat.colour %>; "><%= cat.name %></span>
+        <span class="recipes__categories--badge" style="background:<%= cat.colour %>; ">
+          <%= cat.name %>
+        </span>
       <% end %>
     </span>
 
     <p>Ingredients: <%= Array(recipe.ingredients.split(', ')).length %></p>
-
     <p>Directions: <%= Array(recipe.steps.split(', ')).length %></p>
-    <br />
   <% end %>
 </div>

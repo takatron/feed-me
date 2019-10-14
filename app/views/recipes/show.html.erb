@@ -1,8 +1,12 @@
-<%= link_to('View All Recipes', recipes_path) %>
 <div class="recipes">
-  <h1 class="recipes__title">
+  <%= link_to('View All Recipes', recipes_path, class: 'recipes__view-all') %>
+
+  <h1>
     <%= @recipe.title %> <span class="recipes__level">(<%= @recipe.level.name %>)</span>
-    <%= button_to('Edit', edit_recipe_path(@recipe.id), :method => :get, class: 'recipes__edit') %>
+    <%= button_to('Edit',
+      edit_recipe_path(@recipe.id),
+      :method => :get,
+      class: 'secondary inline left') %>
   </h1>
 
   <span class="recipes__categories">
@@ -12,19 +16,21 @@
   </span>
 
   <h2>Ingredients</h2>
-  <ul>
+  <ul class="recipes__ingredients">
     <% Array(@recipe.ingredients.split(', ')).each do |ingredient| %>
-      <li><%= ingredient %></li>
+      <li class="recipes__ingredients__each"><%= ingredient %></li>
     <% end %>
   </ul>
 
   <h2>Directions</h2>
-  <ol>
+  <ol class="recipes__steps">
     <% Array(@recipe.steps.split(', ')).each do |step| %>
-      <li><%= step %></li>
+      <li class="recipes__steps__each"><%= step %></li>
     <% end %>
   </ol>
-  <br />
-  <br />
-  <%= button_to('Delete', @recipe, :method => :delete, data:{ confirm: 'Are you sure?' }) %>
+  <%= button_to('Delete',
+    @recipe,
+    :method => :delete,
+    class: 'delete',
+    data:{ confirm: 'Are you sure?' }) %>
   </div>

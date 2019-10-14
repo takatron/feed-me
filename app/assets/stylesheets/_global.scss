@@ -6,28 +6,43 @@ body {
   margin: 10px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
 h1 {
  font-size: 30px;
 }
 
 h2 {
  font-size: 26px;
+ margin-bottom: 14px;
 }
 
 h3 {
  font-size: 24px;
+ margin-bottom: 12px;
 }
 
 h4 {
  font-size: 20px;
+ margin-bottom: 12px;
 }
 
 h5 {
  font-size: 18px;
+ margin-bottom: 10px;
 }
 
 h6 {
  font-size: 16px;
+ margin-bottom: 10px;
+}
+
+p {
+  margin-top: 0;
 }
 
 a {
@@ -71,18 +86,52 @@ a.no-deco, a.no-deco:hover {
   margin-right: 10px;
 }
 
+.button_to {
+  display: flex;
+  align-items: center;
+}
+
+.primary,
+.secondary,
+.delete {
+  border: 2px solid transparent;
+  border-radius: 2px;
+  padding: 4px 10px;
+  font-size: 12px;
+  transition: all 200ms ease-out;
+
+  &.inline {
+    &.left {
+      margin-left: 20px;
+    }
+  }
+}
+
 .primary {
   background: $primary;
-  border: none;
-  border-radius: 2px;
-  padding: 6px 10px;
-  font-size: 12px;
   color: white;
-  transition: all 200ms ease-out;
 
   &:hover,
   &:focus {
     background: $primary_dark;
+  }
+}
 
+.secondary {
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    border-color: $primary_dark;
+  }
+}
+
+.delete {
+  background: $error;
+  color: white;
+
+  &:hover,
+  &:focus {
+    background: $error_dark;
   }
 }

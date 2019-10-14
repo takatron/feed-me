@@ -5,22 +5,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 20px;
 
-  .button_to {
-    display: flex;
-    align-items: center;
-  }
-
-  &__edit,
-  &__add,
-  .submit {
-    margin-left: 20px;
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  &__view-all {
+    margin-bottom: 20px;
   }
 
   &__level {
@@ -34,6 +22,8 @@
     font-size: 10px;
     font-weight: normal;
     color: white;
+    margin-top: -16px;
+    margin-bottom: 10px;
 
     &--badge {
       border-radius: 3px;
@@ -107,6 +97,35 @@
 
     .primary {
       margin-left: 20px;
+    }
+  }
+}
+
+// show
+.recipes {
+  &__ingredients,
+  &__steps {
+    margin: 0;
+    margin-bottom: 20px;
+
+    &__each {
+      padding: 0;
+    }
+  }
+
+  &__ingredients {
+    padding-left: 34px;
+
+    &__each {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__steps {
+    padding-left: 16px;
+
+    &__each {
+      margin-bottom: 14px;
     }
   }
 }

@@ -1,8 +1,11 @@
 <div class="categories">
-  <%= link_to('View All Categories', categories_path) %>
+  <%= link_to('View All Categories', categories_path, class: 'categories__view-all') %>
   <h1 class="categories__title-container">
     <span class="categories__colour-indicator" style="background:<%= @category.colour %>;"></span>
     <%= @category.name %>
-    <%= button_to('Edit', edit_category_path(@category.id), :method => :get, class: 'categories__edit') %>
+    <%= button_to('Edit',
+      edit_category_path(@category.id),
+      :method => :get,
+      class: 'secondary inline left') %>
   </h1>
 </div>

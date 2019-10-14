@@ -1,9 +1,9 @@
 <div class="categories">
-  <h1 class="categories__title">Categories
+  <h1>Categories
     <%= button_to('+ New Category',
       new_category_path,
       :method => :get,
-      class: 'primary recipes__add') %>
+      class: 'primary inline left') %>
   </h1>
 
   <% @category.each do |category| %>

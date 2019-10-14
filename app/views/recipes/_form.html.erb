@@ -1,29 +1,31 @@
-<%= form_for recipe do |f| %>
-  <%= f.label "Name:" %>
-  <br />
+<%= form_for(:recipe, url: recipes_path, html: {class: 'recipes form'}) do |f| %>
+  <%= f.label(:title, class: 'recipes__label') {"Name:"} %>
   <%= f.text_field :title %>
-  <br />
-  <br />
-  <%= f.label "Ingredients:" %>
-  <br />
+  <%= f.label(:ingredients, class: 'recipes__label') {"Ingredients:"} %>
   <%= f.text_field :ingredients %>
-  <br />
-  <br />
-  <%= f.label "Steps:" %>
-  <br />
+  <%= f.label(:steps, class: 'recipes__label') {"Steps:"} %>
   <%= f.text_field :steps %>
-  <br />
-  <br />
-  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |cat|%>
-    <%= cat.label(class: 'checkbox inline') {cat.check_box() + cat.text } %><br />
-  <% end %>
-  <%= link_to('+ New Category', new_category_path) %>
-  <br />
-  <br />
-  <%= f.collection_radio_buttons(:level_id, Level.all, :id, :name) do |l|%>
-    <%= l.label(class: 'checkbox inline') {l.radio_button() + l.text } %><br />
-  <% end %>
-  <br />
-  <br />
-  <%= link_to("cancel", path) %> <%= f.submit "Submit" %>
+  <div class="recipes__new-categories">
+    <div class="recipes__new-categories__label">Categories:</div>
+    <div class="recipes__new-categories__list">
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |cat|%>
+        <%= cat.label(class: 'checkbox inline') {cat.check_box() + cat.text } %><br />
+      <% end %>
+    </div>
+    <div class="recipes__new-categories__add">
+      <%= link_to('+ New Category', new_category_path) %>
+    </div>
+  </div>
+  <div class="recipes__new-difficulty">
+    <div class="recipes__new-difficulty__label">Difficulty:</div>
+    <div class="recipes__new-difficulty__list">
+      <%= f.collection_radio_buttons(:level_id, Level.all, :id, :name) do |l|%>
+        <%= l.label(class: 'checkbox inline') {l.radio_button() + l.text } %><br />
+      <% end %>
+    </div>
+  </div>
+  <div class="recipes__buttons">
+    <%= link_to("cancel", path) %>
+    <%= f.submit "Submit", class: 'submit' %>
+  </div>
 <% end %>

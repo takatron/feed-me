@@ -1,13 +1,18 @@
 @import "_colours";
 
 .recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
   .button_to {
     display: flex;
     align-items: center;
   }
 
   &__edit,
-  &__add {
+  &__add,
+  .submit {
     margin-left: 20px;
   }
 
@@ -36,5 +41,58 @@
         margin-right: 4px;
       }
     }
+  }
+
+  &.form {
+    width: 300px;
+  }
+
+  &__new-categories,
+  &__new-difficulty {
+    position: relative;
+    border: 1px solid black;
+    margin-top: 24px;
+    max-width: 300px;
+
+    &__label {
+      position: absolute;
+      top: -12px;
+      left: -11px;
+      display: flex;
+      justify-content: space-between;
+      background: white;
+      padding: 4px 10px;
+    }
+
+    &__list {
+      padding: 10px;
+      max-height: 100px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    &__add {
+      background: white;
+      padding: 4px 10px;
+      margin: 10px 0 4px;
+    }
+  }
+
+  &__new-difficulty {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
   }
 }

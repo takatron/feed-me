@@ -1,6 +1,4 @@
-// Place all the styles related to the Recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_colours";
 
 .recipes {
   .button_to {
@@ -8,7 +6,8 @@
     align-items: center;
   }
 
-  &__edit {
+  &__edit,
+  &__add {
     margin-left: 20px;
   }
 

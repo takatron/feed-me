@@ -1,3 +1,5 @@
+@import "_colours";
+
 body {
   font-family: sans-serif;
   font-size: 12px;
@@ -29,19 +31,36 @@ body {
  }
 
  a {
-   color: hotpink;
+   color: $primary;
 
    &:visited,
    &:active {
-     color: hotpink;
+     color: $primary;
    }
 
    &:hover,
    &:focus {
-     color: deeppink;
+     color: $primary_dark;
    }
  }
 
  a.no-deco, a.no-deco:hover {
    text-decoration: none;
  }
+
+button,
+input[type="submit"] {
+  background: $primary;
+  border: none;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: white;
+  transition: all 200ms ease-out;
+
+  &:hover,
+  &:focus {
+    background: $primary_dark;
+
+  }
+}
